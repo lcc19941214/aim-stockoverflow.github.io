@@ -1,0 +1,22 @@
+[
+  {
+    "text": "首页",
+    "id": 1,
+    "link": "/home"
+  },
+  {
+    "text": "测试1",
+    "id": 2,
+    "link": "/test1"
+  },
+  {
+    "text": "测试2",
+    "id": 3,
+    "link": "/test2"
+  },
+  {
+    "text": "关于我们",
+    "id": 4,
+    "link": "/about"
+  }
+]

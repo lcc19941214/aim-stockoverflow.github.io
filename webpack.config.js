@@ -5,14 +5,15 @@ console.log(mod);
 var isDebug = (mod === 'development');
 console.log('isDebug: ', isDebug);
 
-var publicPath = isDebug ? 'http://127.0.0.1:3010/static/' : '/static/';
-
 /**
  * webpack Entry
  */
 var entry = {
 	index: './dev/app/index.js',
-  vendors: [ 'react', 'react-dom', 'react-router', 'antd' ]
+  vendors: [
+    'react', 'react-dom', 'react-router', 'antd',
+    './dev/app/css/antd.css'
+  ]
 };
 
 /**
@@ -22,7 +23,7 @@ var templates = [
 	{
 		chunks: ['vendors', 'index'],
 		template: './dev/app/templates/index.html',  // 入口
-		filename: './static/index.html'  // 出口
+		filename: './index.html'  // 出口
 	}
 ];
 
@@ -31,7 +32,7 @@ var templates = [
  */
 var output = {
 	path: './static/',
-	publicPath: publicPath,
+	publicPath: '/static/',
 	filename: isDebug ? 'js/[name].js' : 'js/[name].js?[hash:8]',
   chunkFilename: isDebug ? 'js/[chunkhash:8].chunk.js' : 'js/[name].chunk.js?[chunkhash:8]'
 };
@@ -54,7 +55,7 @@ var plugins = [
   }),
   new CommonsChunkPlugin({
     name: 'vendors',
-    filename: isDebug ? 'js/vendors.js' : 'js/vendors.js?[chunkhash:8]'
+    filename: isDebug ? 'js/vendors.js' : 'js/vendors.js?[hash:8]'
   }),
   new ExtractTextPlugin(cssFile),
 ];
@@ -96,7 +97,7 @@ var config = {
 
   output: output,
 
-  devtool: isDebug ? '#source-map' : '#cheap-module-source-map',
+  devtool: isDebug && '#source-map',
 
   devServer: {
     historyApiFallback: true,
@@ -130,8 +131,7 @@ var config = {
       {
         test: /\.less$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract('style-loader',
-          'css-loader!less-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
       },
       {
         test: /\.css$/,

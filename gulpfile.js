@@ -8,21 +8,21 @@ var distPath = './static';
 
 gulp.task('webpack', function() {
   return gulp
-    .pipe(devPath)
-    .pipe(webpack)
+    .src(devPath)
+    .pipe(webpack(webpackConfig))
     .pipe(gulp.dest(distPath));
 });
 
-gulp.task('image', function() {
+gulp.task('images', function() {
   return gulp
-    .pipe(`${devPath}/images/*.*`)
+    .src(`${devPath}/images/*.*`)
     .pipe(gulp.dest(`${distPath}/images`));
 });
 
 gulp.task('clear', function() {
   return gulp
-    .pipe(distPath, { read: false })
+    .src(distPath, { read: false })
     .pipe(shell('rm -rf ' + distPath));
 });
 
-gulp.task('start', ['clear', 'image', 'webpack']);
+gulp.task('start', ['images', 'webpack']);
