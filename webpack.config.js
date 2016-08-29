@@ -5,14 +5,15 @@ console.log(mod);
 var isDebug = (mod === 'development');
 console.log('isDebug: ', isDebug);
 
-var publicPath = isDebug ? 'http://127.0.0.1:3010/static/' : '/static/';
-
 /**
  * webpack Entry
  */
 var entry = {
 	index: './dev/app/index.js',
-  vendors: [ 'react', 'react-dom', 'react-router', 'antd' ]
+  vendors: [
+    'react', 'react-dom', 'react-router', 'antd',
+    './dev/app/css/antd.css'
+  ]
 };
 
 /**
@@ -31,7 +32,7 @@ var templates = [
  */
 var output = {
 	path: './static/',
-	publicPath: publicPath,
+	publicPath: '/static/',
 	filename: isDebug ? 'js/[name].js' : 'js/[name].js?[hash:8]',
   chunkFilename: isDebug ? 'js/[chunkhash:8].chunk.js' : 'js/[name].chunk.js?[chunkhash:8]'
 };
@@ -130,8 +131,7 @@ var config = {
       {
         test: /\.less$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract('style-loader',
-          'css-loader!less-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
       },
       {
         test: /\.css$/,

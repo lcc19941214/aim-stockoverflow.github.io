@@ -16,9 +16,17 @@ const rootRoute = [
         component: Home
       },
       {
+        path: '/test1',
+        component: About
+      },
+      {
+        path: '/test2',
+        component: Home
+      },
+      {
         path: '/about',
         component: About
-      },  
+      },
     ]
   }, {
     path: '*',

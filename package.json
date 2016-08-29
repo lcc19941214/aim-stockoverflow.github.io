@@ -50,6 +50,9 @@
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
+    "rc-queue-anim": "~0.12.0",
+    "rc-scroll-anim": "~0.3.0",
+    "rc-tween-one": "~0.7.0",
     "webpack-dev-server": "^1.15.0"
   }
 }
