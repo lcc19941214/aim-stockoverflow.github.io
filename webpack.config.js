@@ -23,7 +23,7 @@ var templates = [
 	{
 		chunks: ['vendors', 'index'],
 		template: './dev/app/templates/index.html',  // 入口
-		filename: './static/index.html'  // 出口
+		filename: './index.html'  // 出口
 	}
 ];
 
@@ -55,7 +55,7 @@ var plugins = [
   }),
   new CommonsChunkPlugin({
     name: 'vendors',
-    filename: isDebug ? 'js/vendors.js' : 'js/vendors.js?[chunkhash:8]'
+    filename: isDebug ? 'js/vendors.js' : 'js/vendors.js?[hash:8]'
   }),
   new ExtractTextPlugin(cssFile),
 ];
@@ -97,7 +97,7 @@ var config = {
 
   output: output,
 
-  devtool: isDebug ? '#source-map' : '#cheap-module-source-map',
+  devtool: isDebug && '#source-map',
 
   devServer: {
     historyApiFallback: true,
