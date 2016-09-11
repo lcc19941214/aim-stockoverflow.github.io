@@ -51,7 +51,8 @@ var cssFile = isDebug ? 'css/[name].css' : 'css/[name].css?[contenthash:8]';
 
 var plugins = [
   new webpack.DefinePlugin({
-    __ENV__: `"${mod.toString()}"`
+    __ENV__: `"${mod.toString()}"`,
+    'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`
   }),
   new CommonsChunkPlugin({
     name: 'vendors',
