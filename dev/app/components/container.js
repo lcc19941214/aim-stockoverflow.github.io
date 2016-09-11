@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { Menu, Icon } from 'antd';
-import QueueAnim from 'rc-queue-anim';
 import { Link } from 'react-router';
 import Home from './home';
 
@@ -27,17 +26,8 @@ export default class Container extends Component {
   render() {
     return (
       <section>
-        <QueueAnim
-          type={['bottom','top']} delay={200}
-          className="header">
-          <Navigation />
-        </QueueAnim>
-
-        <QueueAnim
-          className="container"
-          type={['bottom','top']} delay={200}>
-          {this.props.children || <Home />}
-        </QueueAnim>
+        <Navigation />
+        {this.props.children || <Home />}
       </section>
     );
   }
