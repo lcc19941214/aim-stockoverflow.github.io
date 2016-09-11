@@ -31,7 +31,7 @@ var templates = [
  * output
  */
 var output = {
-	path: './static/',
+	path: path.resolve('./static'),
 	publicPath: '/static/',
 	filename: isDebug ? 'js/[name].js' : 'js/[name].js?[hash:8]',
   chunkFilename: isDebug ? 'js/[chunkhash:8].chunk.js' : 'js/[name].chunk.js?[chunkhash:8]'
@@ -91,7 +91,7 @@ templates.forEach((o) => {
  */
 var alias = {
   data: path.join(__dirname, './dev', 'data'),
-  images: path.join(__dirname, './dev/app', 'images')
+  images: path.join(__dirname, './images')
 };
 
 var config = {
