@@ -1,7 +1,20 @@
 import React, { Component, PropTypes } from 'react';
 import { Carousel } from 'antd';
 
-const CarouselData = require('data/carouselData');
+const CarouselData = [
+  {
+    "title": "首页轮播图1",
+    "alt": "eg-1",
+    "id": 1,
+    "src": require('images/slides/slide_1.png')
+  },
+  {
+    "title": "首页轮播图2",
+    "alt": "eg-2",
+    "id": 2,
+    "src": require('images/slides/slide_2.png')
+  }
+];
 
 export default class Home extends Component {
   render() {
