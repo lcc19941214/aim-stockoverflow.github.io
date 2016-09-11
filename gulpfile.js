@@ -15,14 +15,14 @@ gulp.task('webpack', function() {
 
 gulp.task('images', function() {
   return gulp
-    .src(`${devPath}/images/*.*`)
+    .src(`${devPath}/app/images/*.*`)
     .pipe(gulp.dest(`${distPath}/images`));
 });
 
 gulp.task('clear', function() {
   return gulp
     .src(distPath, { read: false })
-    .pipe(shell('rm -rf ' + distPath));
+    .pipe(shell(`rm -rf ${distPath}/images`));
 });
 
-gulp.task('start', ['images', 'webpack']);
+gulp.task('start', ['clear', 'webpack']);
