@@ -11,7 +11,7 @@ console.log('isDebug: ', isDebug);
 var entry = {
 	index: './dev/app/index.js',
   vendors: [
-    'react', 'react-dom', 'react-router', 'antd',
+    'antd',
     './dev/app/css/antd.css'
   ]
 };
@@ -23,7 +23,7 @@ var templates = [
 	{
 		chunks: ['vendors', 'index'],
 		template: './dev/app/templates/index.html',  // 入口
-		filename: './index.html'  // 出口
+		filename: path.resolve(__dirname, './index.html')  // 出口
 	}
 ];
 
@@ -90,7 +90,8 @@ templates.forEach((o) => {
  * alias资源别名
  */
 var alias = {
-  data: path.join(__dirname, './dev', 'data')
+  data: path.join(__dirname, './dev', 'data'),
+  images: path.join(__dirname, './dev/app', 'images')
 };
 
 var config = {
@@ -141,7 +142,7 @@ var config = {
       },
       {
         test: /\.(jpeg|jpg|png|gif)$/,
-        loader: 'url?limit=8192&name=images/[name].[hash:8].[ext]'
+        loader: 'url?limit=8192&name=[path][name].[hash:8].[ext]'
       },
       {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
