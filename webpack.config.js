@@ -91,7 +91,8 @@ templates.forEach((o) => {
  */
 var alias = {
   data: path.join(__dirname, './dev', 'data'),
-  images: path.join(__dirname, './images')
+  images: path.join(__dirname, './images'),
+  less: path.join(__dirname, './dev/app/less')
 };
 
 var config = {

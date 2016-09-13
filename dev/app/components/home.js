@@ -19,21 +19,40 @@ const CarouselData = [
 export default class Home extends Component {
   render() {
     return (
-      <section>
-        <div className="g-home-content">
-          <div className="m-home-slide">
-            <Carousel autoplay>
-              {
-                CarouselData.map((item, index) =>
-                  <div key={index}>
-                    <img src={item.src} alt={item.alt} style={{ width: "400px" }}/>
-                  </div>
-                )
-              }
-            </Carousel>
+      <div className="home-wrapper">
+        <div className="m-slide">
+          <Carousel autoplay>
+            {
+              CarouselData.map((item, index) =>
+                <div key={index}>
+                  <img src={item.src} alt={item.alt} style={{ width: "400px" }}/>
+                </div>
+              )
+            }
+          </Carousel>
+        </div>
+
+        <div className="content-wrapper">
+          <div className="content content_1">
+            <div className="content-text">
+              <h2>标题一</h2>
+              <p>几句话几句话几句话几句话几句话几句话几句话几句话几句话几句话几句话几句话</p>
+            </div>
+            <div className="content-img">
+              <img src={require('images/homeIntro/content_1.png')} alt="content_1" />
+            </div>
+          </div>
+          <div className="content content_2">
+            <div className="content-img">
+              <img src={require('images/homeIntro/content_1.png')} alt="content_2" />
+            </div>
+            <div className="content-text">
+              <h2>标题二</h2>
+              <p>几句话几句话几句话几句话几句话几句话几句话几句话几句话几句话几句话几句话</p>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
     );
   }
 }
