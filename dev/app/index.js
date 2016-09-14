@@ -6,6 +6,8 @@ import Home from './components/home';
 import About from './components/about';
 import NotFound from './components/notFound';
 
+import 'less/app.less';
+
 const rootRoute = [
   {
     path: '/',
