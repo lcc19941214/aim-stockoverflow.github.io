@@ -5,6 +5,7 @@ import Container from './components/container';
 import Home from './components/home';
 import About from './components/about';
 import NotFound from './components/notFound';
+import Team from './components/team';
 
 import 'less/app.less';
 
@@ -27,7 +28,7 @@ const rootRoute = [
       },
       {
         path: '/about',
-        component: About
+        component: Team
       },
     ]
   }, {
