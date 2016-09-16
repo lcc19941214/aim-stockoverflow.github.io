@@ -1,6 +1,6 @@
 # aim-stockoverflow.github.io
 
-> author Liu Chengchuan, Huang Huijuan
+> author Liuchengchuan, Huanghuijuan, Liujiapai
 
 > time 2016/08/23
 
