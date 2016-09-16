@@ -7,7 +7,7 @@ import ProductionConfig from '../../data/ProductionConfig';
 
 export default class Production extends Component {
     render() {
-        let cardBody = ProductionConfig.Card.map((item,index)=>
+        const cardBody = ProductionConfig.Card.data.map((item,index)=>
             <Card title={item.title} key={index}>
                 <p>{item.type}</p>
                 <p>{item.interest}</p>

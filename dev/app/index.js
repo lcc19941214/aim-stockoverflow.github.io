@@ -6,7 +6,7 @@ import Home from './components/home';
 import About from './components/about';
 import NotFound from './components/notFound';
 import Team from './components/team';
-
+import Production from './components/production';
 import 'less/app.less';
 
 const rootRoute = [
@@ -31,7 +31,8 @@ const rootRoute = [
         component: Team
       },
       {
-        path:'/production'
+        path:'/production',
+        component:Production
       }
     ]
   }, {
