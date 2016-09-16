@@ -1,27 +1,45 @@
 #root {
   .g-content {
-    .custom-image img {
-      display: block;
-    }
-    .custom-card {
-      line-height: 2em;
-      padding: 0px 10px ;
-      height: 350px;
-      font-size: 14pt ;
-    }
-    .custom-card p {
-      color: #999;
+    .team-wrapper {
+      margin: 0 auto;
+      .layout();
+      padding-top: 100px;
+      padding-bottom: 80px;
+      max-width: @max-width;
+      background: #ececec;
 
-    }
-    .ant-card{
-      margin-top: 80px;
-    }
-    .ant-card-head{
-      line-height:60px;
-      height:60px;
-    }
-    h3.ant-card-head-title{
-      font-size:18pt;
+      & > ul {
+        & > li {
+          display: inline-block;
+          width: 30%;
+          margin: 20px 1.66666%;
+          margin: 0 calc(3.333%/2) 40px;
+
+          .ant-card{
+            .ant-card-head{
+              line-height: 60px;
+              height: 60px;
+              .ant-card-head-title{
+                font-size: 18px;
+              }
+            }
+
+            .custom-image img {
+              display: block;
+            }
+            .custom-card {
+              line-height: 1.6em;
+              padding: 0px 10px ;
+              height: 350px;
+              font-size: 14px;
+            }
+            .custom-card p {
+              color: @context-color;
+              padding-bottom: 10px;
+            }
+          }
+        }
+      }
     }
   }
 }
