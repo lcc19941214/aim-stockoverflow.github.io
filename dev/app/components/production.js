@@ -3,7 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react';
 import {Card} from 'antd';
-import ProductionConfig from '../../data/ProductionConfig';
+import ProductionConfig from 'data/ProductionConfig';
 
 export default class Production extends Component {
     render() {

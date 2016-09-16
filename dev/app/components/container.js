@@ -25,20 +25,22 @@ export default class Container extends Component {
     return (
       <div className="container">
         <div className="g-header">
-          <div className="logo">
-            <Link to="/">
-              <img alt="aim-logo" src={require('images/logo/logo.png')} />
-            </Link>
-          </div>
-          <div className="navigation">
-            <Menu mode="horizontal">
-              {
-                NavigationData.map((item, index) =>
-                  <MenuItem key={index}>
-                    <Link to={item.link}>{item.text}</Link>
-                  </MenuItem>)
-              }
-            </Menu>
+          <div className="header-wrapper">
+            <div className="logo">
+              <Link to="/">
+                <img alt="aim-logo" src={require('images/logo/logo.png')} />
+              </Link>
+            </div>
+            <div className="navigation">
+              <Menu mode="horizontal">
+                {
+                  NavigationData.map((item, index) =>
+                    <MenuItem key={index}>
+                      <Link to={item.link}>{item.text}</Link>
+                    </MenuItem>)
+                }
+              </Menu>
+            </div>
           </div>
         </div>
 
@@ -47,24 +49,23 @@ export default class Container extends Component {
         </div>
 
         <div className="g-footer">
-          <Row className="footer-wrapper">
-            <div className="member-list">
-              <dl>
-                <dt>{FooterData.owner.title}</dt>
-                <dd>{FooterData.owner.member}</dd>
-              </dl>
-            </div>
-            <div className="member-list">
-              <dl>
-                <dt>{FooterData.theory.title}</dt>
-                <dd>{FooterData.theory.member}</dd>
-              </dl>
-              <dl>
-                <dt>{FooterData.tech.title}</dt>
-                <dd>{FooterData.tech.member}</dd>
-              </dl>
-            </div>
-          </Row>
+          <div className="footer-wrapper">
+            <ul>
+              <li>
+                <div className="logo"></div>
+              </li>
+              {
+                Object.keys(FooterData).map((key, idx) =>
+                  <li key={idx}>
+                    <h4>{FooterData[key].title}</h4>
+                    <p>{FooterData[key].member}</p>
+                  </li>)
+              }
+            </ul>
+          </div>
+          <div className="copyright">
+            <p>Copyright © 2016 The Project by <span>stockoverflow</span>. All Rights Reserved</p>
+          </div>
         </div>
       </div>
     );

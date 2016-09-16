@@ -6,7 +6,7 @@ export default {
         img: [
             {
                 title: 'list-img-1',
-                src: require('images/prodution/1.1.png')
+                src: require('images/production/1.1.png')
             },
             {
                 title: 'list-img-2',
