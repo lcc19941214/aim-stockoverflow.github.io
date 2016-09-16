@@ -30,6 +30,9 @@ const rootRoute = [
         path: '/about',
         component: Team
       },
+      {
+        path:'/production'
+      }
     ]
   }, {
     path: '*',
