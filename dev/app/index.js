@@ -3,10 +3,10 @@ import { render } from 'react-dom';
 import { Router, Route, IndexRedirect, browserHistory } from 'react-router';
 import Container from './components/container';
 import Home from './components/home';
-import About from './components/about';
-import NotFound from './components/notFound';
-import Team from './components/team';
 import Production from './components/production';
+import TechIntro from './components/techIntro.js';
+import Team from './components/team';
+import NotFound from './components/notFound';
 
 import 'less/app.less';
 
@@ -24,8 +24,8 @@ const rootRoute = [
         component:Production
       },
       {
-        path: '/test2',
-        component: Home
+        path: '/technology',
+        component: TechIntro
       },
       {
         path: '/about',
