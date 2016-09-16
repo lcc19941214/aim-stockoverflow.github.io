@@ -7,6 +7,7 @@ import About from './components/about';
 import NotFound from './components/notFound';
 import Team from './components/team';
 import Production from './components/production';
+
 import 'less/app.less';
 
 const rootRoute = [
@@ -19,9 +20,9 @@ const rootRoute = [
         component: Home
       },
       {
-        path: '/test1',
-        component: About
-      },
+        path:'/production',
+        component:Production
+      }
       {
         path: '/test2',
         component: Home
@@ -30,10 +31,6 @@ const rootRoute = [
         path: '/about',
         component: Team
       },
-      {
-        path:'/production',
-        component:Production
-      }
     ]
   }, {
     path: '*',
