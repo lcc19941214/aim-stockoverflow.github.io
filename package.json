@@ -4,8 +4,8 @@
   "description": "ami-stockoverflow index build files",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development & webpack-dev-server --inline --hot",
-    "build": "NODE_ENV=production & gulp start"
+    "dev": "NODE_ENV=development webpack-dev-server --inline --hot",
+    "build": "NODE_ENV=production gulp start"
   },
   "repository": {
     "type": "git",
