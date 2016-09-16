@@ -5,12 +5,12 @@
     "link": "/home"
   },
   {
-    "text": "测试1",
+    "text": "产品介绍",
     "id": 2,
-    "link": "/test1"
+    "link": "/production"
   },
   {
-    "text": "测试2",
+    "text": "技术简介",
     "id": 3,
     "link": "/test2"
   },

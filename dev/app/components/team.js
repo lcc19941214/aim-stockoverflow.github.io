@@ -97,7 +97,7 @@ export default class Team extends Component {
                 </Row>
                 <Row type="flex" justify="space-around">
                     <Col span="8">
-                          <Card style={{ width: 400}}  title="刘天微" bordered={false}>
+                          <Card style={{ width: 400}}  title="刘天威" bordered={false}>
                             {
                                 //    <div className="custom-image">
                                 //       <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
@@ -203,5 +203,3 @@ export default class Team extends Component {
     );
     }
 }
-
-
