@@ -22,7 +22,7 @@ const rootRoute = [
       {
         path:'/production',
         component:Production
-      }
+      },
       {
         path: '/test2',
         component: Home
@@ -30,7 +30,7 @@ const rootRoute = [
       {
         path: '/about',
         component: Team
-      },
+      }
     ]
   }, {
     path: '*',
